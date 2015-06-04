@@ -23,18 +23,20 @@ void setup() {
 }
 
 void heen(){
-  for(pos = 0; pos < 45; pos += 1)  // goes from 0 degrees to 180 degrees 
+  for(pos = 0; pos < 180; pos += 1)  // goes from 0 degrees to 180 degrees 
   {                                  // in steps of 1 degree 
     servo1.write(pos);              // tell servo to go to position in variable 'pos' 
-    delay(5);                       // waits 15ms for the servo to reach the position 
+    delay(1);                       // waits 15ms for the servo to reach the position 
+    Serial.println("heen");
   } 
 }
 
 void terug(){
-  for(pos = 45; pos>=1; pos-=1)     // goes from 180 degrees to 0 degrees 
+  for(pos = 180; pos>=1; pos-=1)     // goes from 180 degrees to 0 degrees 
   {                                
     servo1.write(pos);              // tell servo to go to position in variable 'pos' 
-    delay(5);                       // waits 15ms for the servo to reach the position 
+    delay(1);                       // waits 15ms for the servo to reach the position 
+    Serial.println("terug");
   } 
 }
 
@@ -44,18 +46,18 @@ void loop() {
   {
     val = Serial.read();
     
-    if (val == '1')
-    {
-      if(test == true)
-      {
-        test = false;
-        heen();
-      } else if (test == false)
-      {
-        test = true;
-        terug();
-      }
-    } 
+//    if (val == '1')
+//    {
+//      if(test == true)
+//      {
+//        test = false;
+//        heen();
+//      } else if (test == false)
+//      {
+//        test = true;
+//        terug();
+//      }
+//    } 
     
     
   }
@@ -66,6 +68,11 @@ void loop() {
     Serial.println('0');
     
   }
-
-
+  
+  terug();
+  heen();
+  
+  //int angle = servo1.read();
+  //Serial.println(angle);
+  Servo::refresh()
 }

@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-String state = 0;
+//String state = "abc";
 
 SoftwareSerial wifi(10, 11); // RX, TX
 
@@ -16,11 +16,11 @@ void loop() {
   while(wifi.available()) Serial.write(wifi.read());
   while(Serial.available()) wifi.write(Serial.read());
 
-  if (wifi.available() > 0){
-    state = wifi.read();
-    
-    if (state.substring(1) == "IPD"){
-      Serial.write(state);
-    }
-  }
+//  if (wifi.available() > 0){
+//    String state = wifi.read();
+//    
+//    if (state.substring(0) == "IPD"){
+//      Serial.write(state);
+//    }
+//  }
 }

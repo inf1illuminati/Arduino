@@ -58,18 +58,20 @@ void loop() {
   {
     val = Serial.read();
     
-//    if (val == '1')
-//    {
-//      if(test == true)
-//      {
-//        test = false;
-//        heen();
-//      } else if (test == false)
-//      {
-//        test = true;
-//        terug();
-//      }
-//    } 
+    Serial.println(val);
+    
+    if (val == '1')
+    {
+      if(test == true)
+      {
+        test = false;
+        digitalWrite(led, HIGH);
+      } else if (test == false)
+      {
+        test = true;
+        digitalWrite(led, LOW);
+      }
+    } 
     
     
   }
@@ -81,8 +83,8 @@ void loop() {
     
   }
   
-  terug(2, 180);
-  heen(2, 180);
+//  terug(2, 180);
+//  heen(2, 180);
   
   //int angle = servo1.read();
   //Serial.println(angle);

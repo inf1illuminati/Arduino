@@ -17,7 +17,7 @@ long interval = 100;
 
 Servo servos[8];
 
-int pos[] = {0, 0, 0, 0, 0, 0, 0, 100};
+int pos[] = {60, 60, 90, 60, 90, 90, 90, 140};
 bool richting[] = {0, 0, 0, 0, 0};
 int selectedServo = 0;
 bool closeGrip = 0;

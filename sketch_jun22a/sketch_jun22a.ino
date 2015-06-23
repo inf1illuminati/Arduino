@@ -31,12 +31,12 @@ void moveServo(int servo, int pos) {
 void setup() {
   servos[5].attach(2, 800, 2100); //base1
   servos[6].attach(3, 800, 2100); //base2
-  servos[0].attach(4, 800, 2100); //high torque
+  servos[0].attach(4, 500, 2500); //high torque
   servos[1].attach(5, 800, 2100); //standard arm
   servos[2].attach(6, 500, 2400); //micro 1
-  servos[3].attach(7, 500, 2400); //micro metal
+  servos[3].attach(7, 400, 2400); //micro metal
   servos[4].attach(8, 500, 2400); //micro 2
-  servos[7].attach(9, 500, 2400); //micro gripper
+  servos[7].attach(9, 400, 2400); //micro gripper
   pinMode(LEDPin, OUTPUT);
   //myservo.attach(11, 605, 2320);
   //myservo.attach(11, 500, 2400);

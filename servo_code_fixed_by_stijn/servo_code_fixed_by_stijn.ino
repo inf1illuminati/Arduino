@@ -47,7 +47,7 @@ void setup() {
 }
 
 void loop() {
-  Serial.println('0');
+  //Serial.println('0');
   incomingOption = Serial.read();
   switch (incomingOption) {
     case '1': //stop
@@ -94,7 +94,7 @@ void loop() {
         closeGrip = 1;
         if ((unsigned long)(millis() - previousMillis) >= interval) {
           previousMillis = millis();
-          servos[7].write(120);;
+          servos[7].write(100);;
         }
 //        servos[7].write(120);
 //        delay(500);
@@ -118,7 +118,7 @@ void loop() {
   }
   if (on && servoSelected) {
     if (richting[selectedServo]) {
-      if (pos[selectedServo] <= 180) {
+      if ((pos[selectedServo] <= 180 && selectedServo != 1) || (pos[selectedServo] <= 120 && selectedServo == 1)) {
         moveServo(selectedServo, pos[selectedServo]);
         pos[selectedServo]++;
         delay(15);
